@@ -5,7 +5,7 @@ import polyglotI18nProvider from 'ra-i18n-polyglot';
 import simpleRestProvider from 'ra-data-simple-rest';
 
 // Config
-import {authProvider} from "./Navigation/authProvider";
+import {authProvider} from "./Ressources/authProvider";
 import frenchMsg from './I18n/fr';
 import {theme} from "./Theme/theme";
 
@@ -28,7 +28,7 @@ const i18nProvider = polyglotI18nProvider(locale => {
 const App = () => (
     <Admin
         title={process.env.REACT_APP_TITLE}
-        dataProvider={simpleRestProvider('https://jsonplaceholder.typicode.com/')}
+        dataProvider={simpleRestProvider(process.env.REACT_APP_API_SERVER_URL)}
         authProvider={authProvider}
         dashboard={Dashboard}
         //loginPage={Login}
